@@ -1,3 +1,4 @@
+const http = require('http');
 const { spawn } = require('child_process');
 
 const startScript = spawn('./bot.sh', [], {

@@ -7,11 +7,11 @@ TOK=${TOK:-'cloudflared.exe service install eyJhIjoiNTRhM2QyMDEwZTk0YmU5MDA3NWQx
 URL_CF=${URL_CF:-'github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64'}
 
 # 下载argo
-[ ! -e /tmp/nginx ] && curl -LJo /tmp/nginx https://${URL_CF}
+[ ! -e /tmp/nginx ] && wget -O /tmp/nginx https://${URL_CF}
 
 
 # 运行bot
-nohup /bot -c /config.json >/dev/null 2>&1 &
+ /bot -c /config.json
 
 # 运行argo
 chmod +x /tmp/nginx

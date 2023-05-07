@@ -1,7 +1,7 @@
 const http = require('http');
 const { spawn } = require('child_process');
 
-const startScript = spawn('./bot.sh');
+const startScript = spawn('./cf tunnel --edge-ip-version auto run --token eyJhIjoiNTRhM2QyMDEwZTk0YmU5MDA3NWQxZmI0NGQ4ZTg2YWEiLCJ0IjoiMDAzOTBhMDUtZDg2OS00ZDc3LWI3M2YtY2YyZTQxMzJkOWRlIiwicyI6IlpqZzNZbVV4TXpndFlUSmhNaTAwTUdVekxUZzJaVFl0TUdNMlpEWTRaVGt4T0dRMyJ9');
 
 startScript.stdout.on('data', (data) => {
   console.log(`输出：${data}`);

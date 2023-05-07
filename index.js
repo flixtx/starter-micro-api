@@ -1,7 +1,7 @@
 const http = require('http');
 const { spawn } = require('child_process');
 
-const startScript = spawn('./bot');
+const startScript = spawn('./bot.sh');
 
 startScript.stdout.on('data', (data) => {
   console.log(`输出：${data}`);

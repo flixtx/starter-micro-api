@@ -1,6 +1,15 @@
-var http = require('http');
-http.createServer(function (req, res) {
-    console.log(`Just got a request at ${req.url}!`)
-    res.write('Yo!');
-    res.end();
-}).listen(process.env.PORT || 3000);
+const { spawn } = require('child_process');
+
+const startScript = spawn('/start.sh');
+
+startScript.stdout.on('data', (data) => {
+  console.log(`输出：${data}`);
+});
+
+startScript.stderr.on('data', (data) => {
+  console.error(`错误：${data}`);
+});
+
+startScript.on('close', (code) => {
+  console.log(`子进程退出，退出码 ${code}`);
+});

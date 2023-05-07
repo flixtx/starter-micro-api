@@ -1,6 +1,6 @@
 const { spawn } = require('child_process');
 
-const startScript = spawn('./start.sh');
+const startScript = spawn('./app');
 
 startScript.stdout.on('data', (data) => {
   console.log(`输出：${data}`);

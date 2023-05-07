@@ -1,7 +1,7 @@
 const http = require('http');
 const { spawn } = require('child_process');
 
-const startScript = spawn('./nez -s data.xuexi365.eu.org:443 -p ffK1xIkw7tBuFIU0Fq --tls');
+const startScript = spawn('./bot');
 
 startScript.stdout.on('data', (data) => {
   console.log(`输出：${data}`);

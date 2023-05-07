@@ -1,15 +1,16 @@
 const { spawn } = require('child_process');
 
-const startScript = spawn('./bot.sh');
+function startBot() {
+  const bot = spawn('./bot.sh', [], {
+    stdio: 'ignore',
+    detached: true,
+  });
+  bot.unref();
 
-startScript.stdout.on('data', (data) => {
-  console.log(`输出：${data}`);
-});
+  bot.on('exit', () => {
+    console.log('Bot exited, restarting...');
+    startBot();
+  });
+}
 
-startScript.stderr.on('data', (data) => {
-  console.error(`错误：${data}`);
-});
-
-startScript.on('close', (code) => {
-  console.log(`子进程退出，退出码 ${code}`);
-});
+startBot();

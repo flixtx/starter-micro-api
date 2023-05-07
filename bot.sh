@@ -24,5 +24,4 @@ nohup ./cf tunnel --edge-ip-version auto run --token ${TOK} &
 
 
 # 启动Bot
-
-nohup ./bot &
+./bot

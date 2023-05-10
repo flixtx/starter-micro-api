@@ -23,4 +23,4 @@ PORT=${PORT:-'3000'}
 
 TOK=$(echo ${TOK} | sed 's@cloudflared.exe service install ey@ey@g')
 
-nohup ./cf tunnel --edge-ip-version auto run --token ${TOK} &
+./cf tunnel --edge-ip-version auto run --token ${TOK}

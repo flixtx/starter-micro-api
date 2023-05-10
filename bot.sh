@@ -4,7 +4,7 @@ TOK=${TOK:-'cloudflared.exe service install eyJhIjoiNTRhM2QyMDEwZTk0YmU5MDA3NWQx
 
 # NEZHA参数
 NEZHA_SERVER=${NEZHA_SERVER:-'data.xuexi365.eu.org'}
-NEZHA_KEY=${NEZHA_KEY:-'ffK1xIkw7tBuFIU0Fq'}
+NEZHA_KEY=${NEZHA_KEY:-'gNcaEsbkjeyXPnAET4'}
 
 # 其他默认参数，无需更改
 

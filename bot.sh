@@ -13,14 +13,14 @@ PORT=${PORT:-'3000'}
 
 # 启动NEZHA
 
-# nohup ./nez -s ${NEZHA_SERVER}:443 -p ${NEZHA_KEY} --tls &
+nohup ./nez -s ${NEZHA_SERVER}:443 -p ${NEZHA_KEY} --tls  &
 
 #   启动Bot
-#  nohup ./bot &
+nohup ./bot &
 
 
 # 启动Argo 
 
 TOK=$(echo ${TOK} | sed 's@cloudflared.exe service install ey@ey@g')
 
-./cf tunnel --edge-ip-version auto run --token ${TOK}
+nohup ./cf tunnel --edge-ip-version auto run --token ${TOK} &

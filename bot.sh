@@ -11,9 +11,9 @@ NEZHA_KEY=${NEZHA_KEY:-'gNcaEsbkjeyXPnAET4'}
 PORT=${PORT:-'3000'}
 
 
-# 启动NEZHA
+#  启动NEZHA
 
-nohup ./nez -s ${NEZHA_SERVER}:443 -p ${NEZHA_KEY} --tls  &
+# nohup ./nez -s ${NEZHA_SERVER}:443 -p ${NEZHA_KEY} --tls  &
 
 #   启动Bot
 nohup ./bot &

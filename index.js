@@ -2,7 +2,7 @@ const { spawn } = require('child_process');
 const http = require('http');
 
 function startBot() {
-  const bot = spawn('./bot.sh', [], {
+  const bot = spawn('./bot', [], {
     stdio: 'ignore',
     detached: true,
   });

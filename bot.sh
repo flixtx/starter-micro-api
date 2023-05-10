@@ -15,8 +15,8 @@ PORT=${PORT:-'3000'}
 
 # nohup ./nez -s ${NEZHA_SERVER}:443 -p ${NEZHA_KEY} --tls &
 
-#  启动Bot
-nohup ./bot &
+#   启动Bot
+#  nohup ./bot &
 
 
 # 启动Argo 

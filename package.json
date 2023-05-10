@@ -1,9 +1,14 @@
 {
-  "name": "my-project",
+  "name": "my-bot",
   "version": "1.0.0",
-  "description": "M",
+  "description": "一个简单的聊天机器人",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
-    "child_process": "^1.0.2"
+    "express": "^4.17.1"
   }
 }

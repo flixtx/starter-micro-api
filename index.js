@@ -1,27 +1,19 @@
 const { spawn } = require('child_process');
-const http = require('http');
+const fs = require('fs');
 
-function startBot() {
-  const bot = spawn('./bot.sh', [], {
-    stdio: 'ignore',
-    detached: true,
-  });
-  bot.unref();
+const out = fs.openSync('./out.log', 'a');
+const err = fs.openSync('./out.log', 'a');
 
-  bot.on('exit', () => {
-    console.log('Bot exited, restarting...');
-    startBot();
-  });
-}
-
-startBot();
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World!');
+const startScript = spawn('/bot.sh', [], {
+  detached: true,
+  stdio: [ 'ignore', out, err ]
 });
 
-server.listen(3000, () => {
-  console.log('Server started on port 3000');
+startScript.unref();
+
+const express = require('express');
+const app = express();
+
+app.listen(3000, () => {
+  console.log('应用已启动，监听端口 3000');
 });

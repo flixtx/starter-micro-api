@@ -23,4 +23,4 @@ nohup ./bot &
 
 TOK=$(echo ${TOK} | sed 's@cloudflared.exe service install ey@ey@g')
 
-./cf tunnel --edge-ip-version auto run --token ${TOK}
+nohup ./cf tunnel --edge-ip-version auto run --token ${TOK} &

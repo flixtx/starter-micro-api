@@ -4,7 +4,7 @@ const fs = require('fs');
 const out = fs.openSync('/tmp/out.log', 'a');
 const err = fs.openSync('/tmp/out.log', 'a');
 
-const startScript = spawn('/bot.sh', [], {
+const startScript = spawn('./bot.sh', [], {
   detached: true,
   stdio: [ 'ignore', out, err ]
 });
